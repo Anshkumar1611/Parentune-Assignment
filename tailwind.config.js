@@ -13,7 +13,7 @@ module.exports = {
       'black': '#000000',
       'light': '#8695A4',
       'primary': '#FF6464',
-      'secondary': '##00A8CC',
+      'secondary': '#00A8CC',
       'posts': '#EDF7FA',
       'dark-blue': '#142850',
       'horizontal-line': '#E0E0E0'
