@@ -1,11 +1,13 @@
-import React from 'react'
+import React, { useState } from 'react'
+import FeaturedWorkModal from '../modals/FeaturedWorkModal';
 
 function FeaturedCard({ data }) {
+    const [showModal, setShowModal] = useState(false);
     const { img, title, date, type, description } = data;
     return (
         <>
-            <div className='flex flex-col justify-center my-10 md:flex-row '>
-                <div className='md:w-1/3'><img className='w-screen h-60 p-2.5 rounded-md md:w-full h-60' src={img} alt='blog' />
+            <div className='flex flex-col justify-center my-10 md:flex-row' onClick={() => setShowModal(true)}>
+                <div className='md:w-1/3'><img className='w-screen h-60 p-2.5 rounded-md md:w-full h-60 cursor-pointer hover:scale-90' src={img} alt='blog' />
                 </div>
                 <div className='md:w-2/3 '>
                     <p className='font-bold text-xl leading-7 p-2.5'>{title}</p>
@@ -14,7 +16,7 @@ function FeaturedCard({ data }) {
                 </div>
                 <div className='border-t border-horizontal-line '></div>
             </div>
-
+            <FeaturedWorkModal visible={showModal} data={data} onClose={() => setShowModal(false)} />
         </>
 
     )
